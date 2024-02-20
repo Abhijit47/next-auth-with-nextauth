@@ -30,13 +30,13 @@ const options = {
           label: 'Email',
           type: 'email',
           placeholder: 'example@gmail.com',
-          defaultValue: 'abhijit123@gmail.com',
+          // defaultValue: 'abhijit123@gmail.com',
         },
         password: {
           label: 'Password',
           type: 'password',
           placeholder: '*****',
-          defaultValue: 'admin123',
+          // defaultValue: 'admin123',
         },
       },
       async authorize(credentials, req) {
