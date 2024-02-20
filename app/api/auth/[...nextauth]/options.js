@@ -30,13 +30,13 @@ const options = {
           label: 'Email',
           type: 'email',
           placeholder: 'example@gmail.com',
-          // defaultValue: 'abhijit123@gmail.com',
+          defaultValue: 'abhijit123@gmail.com',
         },
         password: {
           label: 'Password',
           type: 'password',
           placeholder: '*****',
-          // defaultValue: 'admin123',
+          defaultValue: 'admin123',
         },
       },
       async authorize(credentials, req) {
@@ -58,8 +58,8 @@ const options = {
             headers: { 'Content-Type': 'application/json' },
           }
         );
-        const user = await res.json();
-        // console.log('user', user);
+        const { user } = await res.json();
+        console.log('user', user);
 
         // If no error and we have user data, return it
         if (res.ok && user) {
@@ -77,7 +77,7 @@ const options = {
     colorScheme: 'light', // "auto" | "dark" | "light"
     brandColor: '#6366F1', // Hex color code
     logo: 'https://next-auth.js.org/img/logo/logo-xs.png', // Absolute URL to image
-    buttonText: 'Sign in to get access', // Hex color code
+    buttonText: '#6366F1', // Hex color code
   },
   // session: {
   //   // Choose how you want to save the user session.

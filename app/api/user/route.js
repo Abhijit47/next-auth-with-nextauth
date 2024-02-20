@@ -45,9 +45,10 @@ export async function POST(req, res) {
         status: 'success',
         message: 'Logged in user',
         user: {
+          name: existingUser.name,
           email: existingUser.email,
-          password: existingUser.password,
           csrfToken: existingUser.csrfToken,
+          image: existingUser.image,
         },
       },
       { status: 200, headers: { 'Content-Type': 'application/json' } }

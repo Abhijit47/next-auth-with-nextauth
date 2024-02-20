@@ -3,12 +3,12 @@ import bcrypt from 'bcrypt';
 
 const userSchema = new Schema(
   {
-    userName: {
+    name: {
       type: String,
       default: 'No Name provide',
     },
 
-    userAvatar: {
+    image: {
       type: String,
       default: 'https://placehold.co/300x300',
     },
@@ -46,10 +46,10 @@ userSchema.methods.comparePassword = async function (password) {
 };
 
 // developement
-let User = (mongoose.models = {});
-User = mongoose.models.User || mongoose.model('User', userSchema);
+// let User = (mongoose.models = {});
+// User = mongoose.models.User || mongoose.model('User', userSchema);
 
 // for production
-// const User = mongoose.models.User || mongoose.model('User', userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 export default User;
