@@ -30,13 +30,13 @@ const options = {
           label: 'Email',
           type: 'email',
           placeholder: 'example@gmail.com',
-          defaultValue: 'abhijit123@gmail.com',
+          // defaultValue: 'abhijit123@gmail.com',
         },
         password: {
           label: 'Password',
           type: 'password',
           placeholder: '*****',
-          defaultValue: 'admin123',
+          // defaultValue: 'admin123',
         },
       },
       async authorize(credentials, req) {
@@ -50,11 +50,14 @@ const options = {
         // console.log('req', req.body);
         // console.log('cred', credentials);
 
-        const res = await fetch('http://localhost:3000/api/user', {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: { 'Content-Type': 'application/json' },
-        });
+        const res = await fetch(
+          'https://next-auth-with-nextauth.vercel.app/api/user',
+          {
+            method: 'POST',
+            body: JSON.stringify(credentials),
+            headers: { 'Content-Type': 'application/json' },
+          }
+        );
         const user = await res.json();
         // console.log('user', user);
 
